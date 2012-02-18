@@ -2,9 +2,8 @@ var fs = require('fs');
 
 describe('task_loader', function () {
 
-  var task_loader = require('../lib/task_loader');
-
-  var pippenfile_path = process.cwd() + '/pippenfile';
+  var task_loader = require('../lib/task_loader'),
+      pippenfile_path = process.cwd() + '/pippenfile';
 
   var createPippenfile = function () {
     fs.writeFileSync(
@@ -59,7 +58,6 @@ describe('task_loader', function () {
         expect(tasks.embedded_task).toBeDefined();
         expect(tasks.project_task).toBeUndefined();
       });
-    
 
     });
   });

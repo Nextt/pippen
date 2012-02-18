@@ -10,9 +10,9 @@ describe('task_invoker', function () {
 
   it('should invoke all pipeline tasks', function () {
     var task1 = createSpy(),
-      task2 = createSpy(),
-      task3 = createSpy(),
-      pipeline = [ task1, task2, task3 ];
+        task2 = createSpy(),
+        task3 = createSpy(),
+        pipeline = [ task1, task2, task3 ];
 
     task_invoker.invoke(pipeline);
 

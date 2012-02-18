@@ -9,8 +9,8 @@ describe('cli', function () {
   describe('#run', function () {
 
     var tasks,
-      param1 = 'p1',
-      param2 = 'p2';
+        param1 = 'p1',
+        param2 = 'p2';
 
     beforeEach(function () {
       tasks = { 'task': function () {} };
