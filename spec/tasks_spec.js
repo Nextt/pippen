@@ -1,4 +1,4 @@
-describe('Tasks', function () {
+describe('tasks', function () {
 	
 	var tasks = require('../lib/tasks');
 	

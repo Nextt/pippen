@@ -1,6 +1,4 @@
-var sinon = require('sinon');
-
-describe('Cli', function () {
+describe('cli', function () {
 	
 	var cli = require('../lib/cli');
 
