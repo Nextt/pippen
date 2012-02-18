@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 (function () {
-	var cli = require('../lib/cli');
-	cli.run.apply( cli, process.argv.slice(2) );	
+  var cli = require('../lib/cli');
+  cli.run.apply( cli, process.argv.slice(2) );  
 });
 
 
