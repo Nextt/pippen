@@ -6,14 +6,30 @@ describe('cli', function () {
 		expect(cli).toBeDefined();
 	});
 
-	describe('#init', function () {
+	describe('#run', function () {
 
-		it('should call task based on first arg', function () {
-			var autotest = 'autotest';
-			spyOn(cli._tasks, autotest);
-			cli.run(autotest);
+		var tasks,
+			param1 = 'p1',
+			param2 = 'p2';
 
-			expect(cli._tasks.autotest).toHaveBeenCalled();
+		beforeEach(function () {
+			tasks = { 'task': function () {} };
+			
+			spyOn(cli._task_loader, 'load').andReturn(tasks);
+			spyOn(tasks, 'task');
+			cli.run('task', 'p1', 'p2');
+		});
+
+		it('should load all tasks', function () {
+			expect(cli._task_loader.load).toHaveBeenCalled();
+		});
+
+		it('should invoke desired task', function () {
+			expect(tasks.task).toHaveBeenCalled();
+		});
+
+		it('should send parameters to invoked task', function () {
+			expect(tasks.task).toHaveBeenCalledWith(param1, param2);
 		});
 
 	});
